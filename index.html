@@ -4666,8 +4666,9 @@ function printAndroidNative(htmlContent) {
                     document.getElementById('versionText').innerText = `الإصدار الحالي: غير مثبت`;
                 }
             } catch (error) {
-                console.error("خطأ في قراءة الإصدار", error);
-            }
+            // هذا السطر سيفضح المشكلة التقنية الحقيقية
+            alert("⚠️ الخطأ التقني هو: \n" + error.message);
+        }
         }
     }
     displayCurrentVersion();
