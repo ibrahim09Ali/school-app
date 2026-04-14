@@ -1,4 +1,4 @@
-const cacheName = 'school-app-v11.2'; // غير هذا الرقم مع كل تحديث قادم
+const cacheName = 'school-app-v2'; // غير هذا الرقم مع كل تحديث قادم
 const assets = [
   './',
   './index.html',
