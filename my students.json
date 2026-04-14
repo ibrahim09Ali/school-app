@@ -1,0 +1,1219 @@
+{
+  "students": {
+    "الأول الابتدائي": [
+      "اولي واحد",
+      "اولي 2",
+      "اولي تلاثة",
+      "اولي اربع",
+      "اولي خمس",
+      "اولي 6",
+      "اولي 77",
+      "اولي778888",
+      "اولي 99999",
+      "اولي999999",
+      "اولي 10",
+      "اولي 1111",
+      "اولي 12",
+      "اولي 13",
+      "اولي 26457"
+    ],
+    "الثاني الابتدائي": [
+      "مروان شاكر",
+      "محمد مدحت",
+      "انس يوسف",
+      "بسام احمد",
+      "يوسف أحمد شرف",
+      "حمزة إبراهيم"
+    ],
+    "الثالث الابتدائي": [
+      "زياد عمر",
+      "محمد عيد",
+      "عبده رزق",
+      "محمد محمود",
+      "محمد عمرو",
+      "مالك عبد الرحمن",
+      "أنس حسن"
+    ],
+    "الرابع الابتدائي": [
+      "لؤي إبراهيم",
+      "عمر محمد فتحي",
+      "هاني أنور"
+    ],
+    "الخامس الابتدائي": [
+      "عمر زياد",
+      "احمد إبراهيم نجيب",
+      "يوسف احمد",
+      "عبد الرحمن أسامة"
+    ],
+    "السادس الابتدائي": [
+      "إبراهيم فرج",
+      "إبراهيم فتحي",
+      "أيمن ياسر",
+      "مروان منصور",
+      "أحمد محمد عبده",
+      "آدم كمال"
+    ],
+    "الأول الإعدادي": [
+      "محمد جلال",
+      "محمد ابراهيم  الفجال"
+    ],
+    "الثاني الإعدادي": [
+      "أحمد كمال",
+      "محمد نصر",
+      "مصطفى شاكر",
+      "عبد الرحمن ربيع",
+      "محمد عبد العزيز",
+      "سالم أحمد شرف"
+    ],
+    "الثالث الإعدادي": [
+      "هيثم أنور",
+      "عامر حسن",
+      "عبد الرحمن أحمد عبده"
+    ],
+    "الأول الثانوي": [
+      "اللابيسلشييق"
+    ],
+    "الثاني الثانوي علمي": [],
+    "الثاني الثانوي أدبي": [],
+    "الثالث الثانوي أدبي": [],
+    "الثالث الثانوي علمي": [
+      "طالب",
+      "ططالب",
+      "طططالب"
+    ]
+  },
+  "records": [
+    {
+      "id": 1774438910243,
+      "className": "الثالث الإعدادي",
+      "studentName": "هيثم أنور",
+      "date": "2026-03-25",
+      "grades": {
+        "اللغة العربية": {
+          "level": 50,
+          "behavior": 88
+        },
+        "الرياضيات": {
+          "level": 66,
+          "behavior": 77
+        },
+        "العلوم": {
+          "level": 77,
+          "behavior": 66
+        }
+      },
+      "avgLevel": 64,
+      "avgBehavior": 77
+    },
+    {
+      "id": 1774438970551,
+      "className": "الثالث الإعدادي",
+      "studentName": "هيثم أنور",
+      "date": "2026-03-24",
+      "grades": {
+        "اللغة العربية": {
+          "level": 65,
+          "behavior": 65
+        },
+        "الرياضيات": {
+          "level": 69,
+          "behavior": 98
+        },
+        "اللغة الإنجليزية": {
+          "level": 63,
+          "behavior": 58
+        }
+      },
+      "avgLevel": 66,
+      "avgBehavior": 74
+    },
+    {
+      "id": 1774439012155,
+      "className": "الثالث الإعدادي",
+      "studentName": "هيثم أنور",
+      "date": "2026-03-23",
+      "grades": {
+        "اللغة العربية": {
+          "level": 69,
+          "behavior": 65
+        },
+        "الرياضيات": {
+          "level": 96,
+          "behavior": 58
+        },
+        "الدراسات الاجتماعية": {
+          "level": 63,
+          "behavior": 69
+        }
+      },
+      "avgLevel": 76,
+      "avgBehavior": 64
+    },
+    {
+      "id": 1774439040354,
+      "className": "الثالث الإعدادي",
+      "studentName": "هيثم أنور",
+      "date": "2026-03-22",
+      "grades": {
+        "اللغة العربية": {
+          "level": 69,
+          "behavior": 69
+        },
+        "الرياضيات": {
+          "level": 69,
+          "behavior": 0
+        },
+        "اللغة الإنجليزية": {
+          "level": 65,
+          "behavior": 67
+        },
+        "العلوم": {
+          "level": 36,
+          "behavior": 65
+        }
+      },
+      "avgLevel": 60,
+      "avgBehavior": 50
+    },
+    {
+      "id": 1774439071220,
+      "className": "الثالث الإعدادي",
+      "studentName": "عامر حسن",
+      "date": "2026-03-25",
+      "grades": {
+        "اللغة العربية": {
+          "level": 63,
+          "behavior": 98
+        },
+        "الرياضيات": {
+          "level": 99,
+          "behavior": 65
+        },
+        "الدراسات الاجتماعية": {
+          "level": 89,
+          "behavior": 97
+        }
+      },
+      "avgLevel": 84,
+      "avgBehavior": 87
+    },
+    {
+      "id": 1774439096421,
+      "className": "الثالث الإعدادي",
+      "studentName": "عامر حسن",
+      "date": "2026-03-24",
+      "grades": {
+        "اللغة العربية": {
+          "level": 68,
+          "behavior": 87
+        },
+        "الرياضيات": {
+          "level": 85,
+          "behavior": 96
+        },
+        "اللغة الإنجليزية": {
+          "level": 85,
+          "behavior": 98
+        },
+        "العلوم": {
+          "level": 69,
+          "behavior": 98
+        },
+        "الدراسات الاجتماعية": {
+          "level": 96,
+          "behavior": 98
+        }
+      },
+      "avgLevel": 81,
+      "avgBehavior": 95
+    },
+    {
+      "id": 1774439117716,
+      "className": "الثالث الإعدادي",
+      "studentName": "عامر حسن",
+      "date": "2026-03-23",
+      "grades": {
+        "اللغة العربية": {
+          "level": 96,
+          "behavior": 98
+        },
+        "الرياضيات": {
+          "level": 87,
+          "behavior": 54
+        },
+        "اللغة الإنجليزية": {
+          "level": 85,
+          "behavior": 87
+        },
+        "العلوم": {
+          "level": 98,
+          "behavior": 98
+        },
+        "الدراسات الاجتماعية": {
+          "level": 98,
+          "behavior": 96
+        }
+      },
+      "avgLevel": 93,
+      "avgBehavior": 87
+    },
+    {
+      "id": 1774439187035,
+      "className": "الثالث الإعدادي",
+      "studentName": "عامر حسن",
+      "date": "2026-03-22",
+      "grades": {
+        "اللغة العربية": {
+          "level": 98,
+          "behavior": 85
+        },
+        "الرياضيات": {
+          "level": 87,
+          "behavior": 36
+        },
+        "اللغة الإنجليزية": {
+          "level": 96,
+          "behavior": 98
+        },
+        "العلوم": {
+          "level": 65,
+          "behavior": 63
+        },
+        "الدراسات الاجتماعية": {
+          "level": 54,
+          "behavior": 36
+        }
+      },
+      "avgLevel": 80,
+      "avgBehavior": 64
+    },
+    {
+      "id": 1774439223326,
+      "className": "الثالث الإعدادي",
+      "studentName": "عبد الرحمن أحمد عبده",
+      "date": "2026-03-25",
+      "grades": {
+        "اللغة العربية": {
+          "level": 36,
+          "behavior": 90
+        },
+        "الرياضيات": {
+          "level": 98,
+          "behavior": 98
+        },
+        "اللغة الإنجليزية": {
+          "level": 69,
+          "behavior": 85
+        },
+        "العلوم": {
+          "level": 98,
+          "behavior": 0
+        },
+        "الدراسات الاجتماعية": {
+          "level": 69,
+          "behavior": 96
+        }
+      },
+      "avgLevel": 74,
+      "avgBehavior": 74
+    },
+    {
+      "id": 1774439242022,
+      "className": "الثالث الإعدادي",
+      "studentName": "عبد الرحمن أحمد عبده",
+      "date": "2026-03-24",
+      "grades": {
+        "اللغة العربية": {
+          "level": 69,
+          "behavior": 96
+        },
+        "الرياضيات": {
+          "level": 87,
+          "behavior": 96
+        },
+        "اللغة الإنجليزية": {
+          "level": 85,
+          "behavior": 85
+        },
+        "العلوم": {
+          "level": 69,
+          "behavior": 58
+        },
+        "الدراسات الاجتماعية": {
+          "level": 47,
+          "behavior": 98
+        }
+      },
+      "avgLevel": 71,
+      "avgBehavior": 87
+    },
+    {
+      "id": 1774439264087,
+      "className": "الثالث الإعدادي",
+      "studentName": "عبد الرحمن أحمد عبده",
+      "date": "2026-03-23",
+      "grades": {
+        "اللغة العربية": {
+          "level": 98,
+          "behavior": 96
+        },
+        "الرياضيات": {
+          "level": 98,
+          "behavior": 100
+        },
+        "اللغة الإنجليزية": {
+          "level": 96,
+          "behavior": 96
+        },
+        "العلوم": {
+          "level": 96,
+          "behavior": 96
+        }
+      },
+      "avgLevel": 97,
+      "avgBehavior": 97
+    },
+    {
+      "id": 1774439280680,
+      "className": "الثالث الإعدادي",
+      "studentName": "عبد الرحمن أحمد عبده",
+      "date": "2026-03-22",
+      "grades": {
+        "الرياضيات": {
+          "level": 69,
+          "behavior": 98
+        },
+        "اللغة الإنجليزية": {
+          "level": 96,
+          "behavior": 85
+        },
+        "العلوم": {
+          "level": 65,
+          "behavior": 48
+        },
+        "الدراسات الاجتماعية": {
+          "level": 65,
+          "behavior": 100
+        }
+      },
+      "avgLevel": 74,
+      "avgBehavior": 83
+    },
+    {
+      "id": 1774445813990,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-03-25",
+      "grades": {
+        "الرياضيات": {
+          "level": 6,
+          "behavior": 0
+        }
+      },
+      "avgLevel": 6,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1774445821964,
+      "className": "الثاني الابتدائي",
+      "studentName": "محمد مدحت",
+      "date": "2026-03-25",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 44,
+          "behavior": 77,
+          "absent": false
+        },
+        "اللغة العربية": {
+          "level": 66,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 55,
+      "avgBehavior": 39
+    },
+    {
+      "id": 1774445894775,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-03-25",
+      "grades": {
+        "اللغة العربية": {
+          "level": 55,
+          "behavior": 0
+        }
+      },
+      "avgLevel": 55,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1774518084695,
+      "className": "السادس الابتدائي",
+      "studentName": "مروان منصور",
+      "date": "2026-03-26",
+      "grades": {
+        "اللغة العربية": {
+          "level": 6,
+          "behavior": 0
+        }
+      },
+      "avgLevel": 6,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1774680813970,
+      "className": "الرابع الابتدائي",
+      "studentName": "لؤي إبراهيم",
+      "date": "2026-03-28",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 55,
+          "behavior": 100
+        }
+      },
+      "avgLevel": 55,
+      "avgBehavior": 100
+    },
+    {
+      "id": 1774680827966,
+      "className": "الرابع الابتدائي",
+      "studentName": "عمر محمد فتحي",
+      "date": "2026-03-28",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 57,
+          "behavior": 100
+        }
+      },
+      "avgLevel": 57,
+      "avgBehavior": 100
+    },
+    {
+      "id": 1774680842743,
+      "className": "الرابع الابتدائي",
+      "studentName": "هاني أنور",
+      "date": "2026-03-28",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 65,
+          "behavior": 100
+        }
+      },
+      "avgLevel": 65,
+      "avgBehavior": 100
+    },
+    {
+      "id": 1775032273888,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032291153,
+      "className": "الثاني الابتدائي",
+      "studentName": "محمد مدحت",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032307015,
+      "className": "الثاني الابتدائي",
+      "studentName": "انس يوسف",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032327070,
+      "className": "الثاني الابتدائي",
+      "studentName": "بسام احمد",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032334600,
+      "className": "الثاني الابتدائي",
+      "studentName": "يوسف أحمد شرف",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032343825,
+      "className": "الثاني الابتدائي",
+      "studentName": "حمزة إبراهيم",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032363769,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-04-02",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032373990,
+      "className": "الثاني الابتدائي",
+      "studentName": "محمد مدحت",
+      "date": "2026-04-02",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032383522,
+      "className": "الثاني الابتدائي",
+      "studentName": "انس يوسف",
+      "date": "2026-04-02",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032397419,
+      "className": "الثاني الابتدائي",
+      "studentName": "بسام احمد",
+      "date": "2026-04-02",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032407830,
+      "className": "الثاني الابتدائي",
+      "studentName": "يوسف أحمد شرف",
+      "date": "2026-04-02",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 85,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775032419732,
+      "className": "الثاني الابتدائي",
+      "studentName": "حمزة إبراهيم",
+      "date": "2026-04-02",
+      "grades": {
+        "الرياضيات": {
+          "level": 70,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 70,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775054817042,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي واحد",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 14,
+          "behavior": 12,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 55,
+          "behavior": 55,
+          "absent": false
+        },
+        "اللغة الإنجليزية": {
+          "level": 66,
+          "behavior": 67,
+          "absent": false
+        }
+      },
+      "avgLevel": 45,
+      "avgBehavior": 45
+    },
+    {
+      "id": 1775054832348,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 2",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 56,
+          "behavior": 34,
+          "absent": false
+        },
+        "الرياضيات": {
+          "level": 77,
+          "behavior": 56,
+          "absent": false
+        },
+        "اللغة الإنجليزية": {
+          "level": 78,
+          "behavior": 100,
+          "absent": false
+        }
+      },
+      "avgLevel": 70,
+      "avgBehavior": 63
+    },
+    {
+      "id": 1775054908273,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي تلاثة",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 77,
+          "behavior": 77,
+          "absent": false
+        }
+      },
+      "avgLevel": 77,
+      "avgBehavior": 77
+    },
+    {
+      "id": 1775054916289,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي اربع",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 88,
+          "behavior": 99,
+          "absent": false
+        }
+      },
+      "avgLevel": 88,
+      "avgBehavior": 99
+    },
+    {
+      "id": 1775054923168,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي خمس",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 99,
+          "behavior": 66,
+          "absent": false
+        }
+      },
+      "avgLevel": 99,
+      "avgBehavior": 66
+    },
+    {
+      "id": 1775054930712,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 6",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 99,
+          "behavior": 44,
+          "absent": false
+        }
+      },
+      "avgLevel": 99,
+      "avgBehavior": 44
+    },
+    {
+      "id": 1775054940409,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 77",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 79,
+          "behavior": 100,
+          "absent": false
+        }
+      },
+      "avgLevel": 79,
+      "avgBehavior": 100
+    },
+    {
+      "id": 1775054947048,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي778888",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 99,
+          "behavior": 88,
+          "absent": false
+        }
+      },
+      "avgLevel": 99,
+      "avgBehavior": 88
+    },
+    {
+      "id": 1775054953445,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 99999",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 89,
+          "behavior": 90,
+          "absent": false
+        }
+      },
+      "avgLevel": 89,
+      "avgBehavior": 90
+    },
+    {
+      "id": 1775054960239,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي999999",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 88,
+          "behavior": 90,
+          "absent": false
+        }
+      },
+      "avgLevel": 88,
+      "avgBehavior": 90
+    },
+    {
+      "id": 1775054966427,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 10",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 90,
+          "behavior": 99,
+          "absent": false
+        }
+      },
+      "avgLevel": 90,
+      "avgBehavior": 99
+    },
+    {
+      "id": 1775054975352,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 1111",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 88,
+          "behavior": 55,
+          "absent": false
+        }
+      },
+      "avgLevel": 88,
+      "avgBehavior": 55
+    },
+    {
+      "id": 1775054982334,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 12",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 90,
+          "behavior": 33,
+          "absent": false
+        }
+      },
+      "avgLevel": 90,
+      "avgBehavior": 33
+    },
+    {
+      "id": 1775054989218,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 13",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 78,
+          "behavior": 87,
+          "absent": false
+        }
+      },
+      "avgLevel": 78,
+      "avgBehavior": 87
+    },
+    {
+      "id": 1775054996397,
+      "className": "الأول الابتدائي",
+      "studentName": "اولي 26457",
+      "date": "2026-04-01",
+      "grades": {
+        "اللغة العربية": {
+          "level": 78,
+          "behavior": 87,
+          "absent": false
+        }
+      },
+      "avgLevel": 78,
+      "avgBehavior": 87
+    },
+    {
+      "id": 1775844087945,
+      "className": "الثاني الابتدائي",
+      "studentName": "محمد مدحت",
+      "date": "2026-04-10",
+      "grades": {
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        },
+        "اللغة الإنجليزية": {
+          "level": 0,
+          "behavior": 0,
+          "absent": "excused"
+        },
+        "الرياضيات": {
+          "level": 90,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 95,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775844893547,
+      "className": "الثاني الابتدائي",
+      "studentName": "انس يوسف",
+      "date": "2026-04-10",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 100,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775844957777,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-04-09",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 100,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775853357233,
+      "className": "الثاني الابتدائي",
+      "studentName": "انس يوسف",
+      "date": "2026-04-09",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 0,
+          "behavior": 0,
+          "absent": "excused"
+        }
+      },
+      "avgLevel": 0,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775854518458,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-04-08",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 0,
+          "behavior": 0,
+          "absent": "excused"
+        }
+      },
+      "avgLevel": 0,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775878026143,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-04-11",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 0,
+          "behavior": 0,
+          "absent": "excused"
+        },
+        "اللغة العربية": {
+          "level": 100,
+          "behavior": 100,
+          "absent": false
+        }
+      },
+      "avgLevel": 100,
+      "avgBehavior": 100
+    },
+    {
+      "id": 1775878706577,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-04-10",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 0,
+          "behavior": 0,
+          "absent": "unexcused"
+        }
+      },
+      "avgLevel": 0,
+      "avgBehavior": 0
+    },
+    {
+      "id": 1775878742860,
+      "className": "الثاني الابتدائي",
+      "studentName": "مروان شاكر",
+      "date": "2026-04-12",
+      "grades": {
+        "اللغة الإنجليزية": {
+          "level": 100,
+          "behavior": 0,
+          "absent": false
+        }
+      },
+      "avgLevel": 100,
+      "avgBehavior": 0
+    }
+  ],
+  "deletedSubjects": {},
+  "addedSubjects": {},
+  "exams": {
+    "الثاني الابتدائي": {
+      "exam_1": {
+        "title": "شهر تجربة الاول",
+        "maxGrades": {
+          "اللغة العربية": "30",
+          "الرياضيات": "20",
+          "اللغة الإنجليزية": "50"
+        },
+        "students": {
+          "مروان شاكر": {
+            "اللغة العربية": "20",
+            "الرياضيات": "20",
+            "اللغة الإنجليزية": "52"
+          },
+          "محمد مدحت": {
+            "اللغة العربية": "20",
+            "الرياضيات": "3",
+            "اللغة الإنجليزية": "25"
+          },
+          "انس يوسف": {
+            "اللغة العربية": "30",
+            "الرياضيات": "10",
+            "اللغة الإنجليزية": "11"
+          },
+          "بسام احمد": {
+            "اللغة العربية": "30",
+            "الرياضيات": "20",
+            "اللغة الإنجليزية": "30"
+          },
+          "يوسف أحمد شرف": {
+            "اللغة العربية": "30",
+            "الرياضيات": "0",
+            "اللغة الإنجليزية": "0"
+          }
+        }
+      },
+      "exam_1776051793187": {
+        "title": "اختبار3",
+        "maxGrades": {
+          "اللغة العربية": "40",
+          "الرياضيات": "70",
+          "اللغة الإنجليزية": "70"
+        },
+        "students": {
+          "مروان شاكر": {
+            "اللغة العربية": "40",
+            "الرياضيات": "70",
+            "اللغة الإنجليزية": "60"
+          }
+        }
+      },
+      "exam_1776052875957": {
+        "title": "نعغ",
+        "maxGrades": {
+          "اللغة العربية": "20",
+          "الرياضيات": "30",
+          "اللغة الإنجليزية": "10"
+        },
+        "students": {
+          "مروان شاكر": {
+            "اللغة العربية": "20",
+            "الرياضيات": "30",
+            "اللغة الإنجليزية": "10"
+          },
+          "محمد مدحت": {
+            "اللغة العربية": "010",
+            "الرياضيات": "30",
+            "اللغة الإنجليزية": "10"
+          }
+        }
+      }
+    },
+    "الثاني الإعدادي": {
+      "exam_1": {
+        "title": "",
+        "maxGrades": {
+          "العلوم": "20"
+        },
+        "students": {
+          "أحمد كمال": {
+            "العلوم": "100"
+          }
+        }
+      }
+    },
+    "الأول الثانوي": {
+      "exam_1776010435098": {
+        "title": "شهر 1",
+        "maxGrades": {},
+        "students": {}
+      }
+    },
+    "الأول الابتدائي": {}
+  }
+}
