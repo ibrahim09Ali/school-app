@@ -1,4 +1,4 @@
-const cacheName = 'school-app-v1';
+const cacheName = 'school-app-v1.1';
 const assets = [
   './',
   './index.html',
