@@ -4630,6 +4630,36 @@ function printAndroidNative(htmlContent) {
         iframe.contentWindow.print();
     }, 1000);
 }
+  async function checkForUpdates() {
+    // 1. التأكد من أن المتصفح يدعم هذه الميزة
+    if ('serviceWorker' in navigator) {
+        try {
+            // إظهار رسالة طمأنة للمعلم
+            alert("جاري الاتصال بالسيرفر للبحث عن تحديثات... ⏳");
+
+            // جلب ملف تشغيل الأوفلاين الحالي
+            const registration = await navigator.serviceWorker.getRegistration();
+            
+            if (registration) {
+                // إجبار الهاتف على تجاهل الكاش وسؤال GitHub فوراً: "هل هناك نسخة جديدة؟"
+                await registration.update();
+
+                // 💡 ملاحظة ذكية:
+                // إذا وجد الهاتف تحديثاً، فإن كود (controllerchange) الذي كتبناه مسبقاً 
+                // سيقوم بعمل "تحديث للصفحة" (Refresh) فوراً ليظهر الشكل الجديد.
+                // أما إذا مرت 3 ثوانٍ ولم يحدث ريفريش للصفحة، فهذا يعني أنه لا يوجد تحديث.
+                setTimeout(() => {
+                    alert("✅ أنت تستخدم أحدث إصدار بالفعل!");
+                }, 3000);
+            }
+        } catch (error) {
+            console.error("خطأ أثناء البحث:", error);
+            alert("❌ تعذر البحث عن تحديثات. تأكد من اتصالك بالإنترنت.");
+        }
+    } else {
+        alert("متصفحك الحالي لا يدعم هذه الميزة.");
+    }
+}
 </script>
 </body>
 </html>
