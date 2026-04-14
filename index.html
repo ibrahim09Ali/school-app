@@ -4636,7 +4636,8 @@ function printAndroidNative(htmlContent) {
     }, 1000);
 }
 
-   
+   </script>
+<script>
     // 1. دالة قراءة رقم الإصدار من ذاكرة الهاتف
     async function displayCurrentVersion() {
         if ('caches' in window) {
@@ -4676,7 +4677,7 @@ function printAndroidNative(htmlContent) {
                         alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
                     }, 3000);
                 } else {
-                    alert("⚠️ لم يتمم العثور على مثبت التطبيق.");
+                    alert("⚠️ لم يتم العثور على مثبت التطبيق.");
                 }
             } catch (error) {
                 console.error("خطأ:", error);
@@ -4686,7 +4687,7 @@ function printAndroidNative(htmlContent) {
             alert("متصفحك الحالي لا يدعم هذه الميزة.");
         }
     });
-
+</script>
 </script>
 </body>
 </html>
