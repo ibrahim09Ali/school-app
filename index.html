@@ -4637,14 +4637,13 @@ function printAndroidNative(htmlContent) {
 }
 
 
-    // 0. مفتاح التشغيل (هذا هو الجزء الذي نسيته أنا!)
+    // 0. مفتاح التشغيل
     if ('serviceWorker' in navigator) {
-        // تشغيل المحرك
         navigator.serviceWorker.register('sw.js')
-            .then(() => console.log("المحرك يعمل بنجاح"))
-            .catch(err => console.log("خطأ في التشغيل", err));
+            .then(() => console.log("✅ المحرك يعمل بنجاح"))
+            .catch(err => console.error("❌ خطأ في تسجيل Service Worker", err));
 
-        // مراقب التحديثات لعمل ريفريش تلقائي
+        // ريفريش تلقائي عند التحديث
         let refreshing = false;
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (!refreshing) {
@@ -4654,47 +4653,49 @@ function printAndroidNative(htmlContent) {
         });
     }
 
-    // 1. دالة قراءة رقم الإصدار من ذاكرة الهاتف
+    // 1. عرض رقم الإصدار
     async function displayCurrentVersion() {
         if ('caches' in window) {
             try {
                 const keys = await caches.keys();
                 const appCache = keys.find(key => key.startsWith('school-app-v'));
                 if (appCache) {
-                    const version = appCache.split('-').pop(); 
+                    const version = appCache.split('-').pop();
                     document.getElementById('versionText').innerText = `الإصدار الحالي: ${version}`;
                 } else {
                     document.getElementById('versionText').innerText = `الإصدار الحالي: غير مثبت`;
                 }
             } catch (error) {
-                console.log("خطأ في قراءة الإصدار", error);
+                console.error("خطأ في قراءة الإصدار", error);
             }
         }
     }
     displayCurrentVersion();
 
-    // 2. وظيفة زر التحديث
+    // 2. زر التحديث (النسخة المُصلحة)
     document.getElementById('updateBtn').addEventListener('click', async function() {
         alert("جاري الاتصال بالسيرفر للبحث عن تحديثات... ⏳");
-        if ('serviceWorker' in navigator) {
-            try {
-                const registration = await navigator.serviceWorker.getRegistration();
-                if (registration) {
-                    await registration.update();
-                    setTimeout(() => {
-                        alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
-                    }, 3000);
-                } else {
-                    alert("⚠️ لم يتم العثور على مثبت التطبيق.");
-                }
-            } catch (error) {
-                console.error("خطأ:", error);
-                alert("❌ حدث خطأ، تأكد من اتصالك بالإنترنت.");
+
+        if (!('serviceWorker' in navigator)) {
+            alert("متصفحك الحالي لا يدعم Service Workers.");
+            return;
+        }
+
+        try {
+            const registration = await navigator.serviceWorker.register('sw.js');
+            if (registration) {
+                console.log("✅ Service Worker جاهز");
+                await registration.update();
+                setTimeout(() => {
+                    alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
+                }, 3000);
             }
-        } else {
-            alert("متصفحك الحالي لا يدعم هذه الميزة.");
+        } catch (error) {
+            console.error("خطأ:", error);
+            alert("❌ حدث خطأ، تأكد من اتصالك بالإنترنت ووجود ملف sw.js.");
         }
     });
+
 
 </script>
 
