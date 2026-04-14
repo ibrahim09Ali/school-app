@@ -1174,10 +1174,15 @@
 
         <button class="btn btn-outline" onclick="backupData()" style="width:100%; font-size:12px;">
             📥 تحميل نسخة احتياطية إضافية
-        </button>
-      <button id="updateBtn" onclick="checkForUpdates()" style="padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    🔄 البحث عن تحديثات
-</button>
+        <div style="text-align: center; margin: 20px;">
+    <button id="updateBtn" style="padding: 12px 20px; background: #28a745; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        🔄 البحث عن تحديثات الآن
+    </button>
+    
+    <p id="versionText" style="margin-top: 10px; color: #555; font-size: 14px; font-weight: bold; background: #f8f9fa; display: inline-block; padding: 5px 10px; border-radius: 5px;">
+        الإصدار الحالي: ⏳ جاري القراءة...
+    </p>
+</div>
     </div>
     </div>
     </div>
@@ -4630,6 +4635,55 @@ function printAndroidNative(htmlContent) {
         iframe.contentWindow.print();
     }, 1000);
 }
+
+    // 1. الخدعة الذكية: دالة تقرأ رقم الإصدار من ذاكرة الهاتف
+    async function displayCurrentVersion() {
+        if ('caches' in window) {
+            try {
+                // فتح الذاكرة وقراءة أسماء الملفات المحفوظة
+                const keys = await caches.keys();
+                
+                // البحث عن الاسم الذي يبدأ بـ school-app
+                const appCache = keys.find(key => key.startsWith('school-app-v'));
+                
+                if (appCache) {
+                    // استخراج الجزء الأخير من الاسم (مثل v12)
+                    const version = appCache.split('-').pop(); 
+                    document.getElementById('versionText').innerText = `الإصدار الحالي: ${version}`;
+                } else {
+                    document.getElementById('versionText').innerText = `الإصدار الحالي: غير مثبت`;
+                }
+            } catch (error) {
+                console.log("خطأ في قراءة الإصدار", error);
+            }
+        }
+    }
+
+    // تشغيل الدالة فور فتح البرنامج لطباعة الرقم
+    displayCurrentVersion();
+
+
+    // 2. وظيفة زر التحديث (كما هي تماماً من قبل)
+    document.getElementById('updateBtn').addEventListener('click', async function() {
+        alert("جاري الاتصال بالسيرفر للبحث عن تحديثات... ⏳");
+        if ('serviceWorker' in navigator) {
+            try {
+                const registration = await navigator.serviceWorker.getRegistration();
+                if (registration) {
+                    await registration.update();
+                    setTimeout(() => {
+                        alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
+                    }, 3000);
+                } else {
+                    alert("⚠️ لم يتم العثور على مثبت التطبيق.");
+                }
+            } catch (error) {
+                console.error("خطأ:", error);
+                alert("❌ حدث خطأ، تأكد من اتصالك بالإنترنت.");
+            }
+        }
+    });
+
   async function checkForUpdates() {
     // 1. التأكد من أن المتصفح يدعم هذه الميزة
     if ('serviceWorker' in navigator) {
