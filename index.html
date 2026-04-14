@@ -4636,20 +4636,31 @@ function printAndroidNative(htmlContent) {
     }, 1000);
 }
 
-   </script>
-<script>
+
+    // 0. مفتاح التشغيل (هذا هو الجزء الذي نسيته أنا!)
+    if ('serviceWorker' in navigator) {
+        // تشغيل المحرك
+        navigator.serviceWorker.register('sw.js')
+            .then(() => console.log("المحرك يعمل بنجاح"))
+            .catch(err => console.log("خطأ في التشغيل", err));
+
+        // مراقب التحديثات لعمل ريفريش تلقائي
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                window.location.reload();
+                refreshing = true;
+            }
+        });
+    }
+
     // 1. دالة قراءة رقم الإصدار من ذاكرة الهاتف
     async function displayCurrentVersion() {
         if ('caches' in window) {
             try {
-                // فتح الذاكرة وقراءة أسماء الملفات المحفوظة
                 const keys = await caches.keys();
-                
-                // البحث عن الاسم الذي يبدأ بـ school-app
                 const appCache = keys.find(key => key.startsWith('school-app-v'));
-                
                 if (appCache) {
-                    // استخراج الجزء الأخير من الاسم (مثل v12)
                     const version = appCache.split('-').pop(); 
                     document.getElementById('versionText').innerText = `الإصدار الحالي: ${version}`;
                 } else {
@@ -4660,12 +4671,9 @@ function printAndroidNative(htmlContent) {
             }
         }
     }
-
-    // تشغيل الدالة فور فتح البرنامج لطباعة الرقم
     displayCurrentVersion();
 
-
-    // 2. وظيفة زر التحديث (النسخة الحديثة والمستقرة)
+    // 2. وظيفة زر التحديث
     document.getElementById('updateBtn').addEventListener('click', async function() {
         alert("جاري الاتصال بالسيرفر للبحث عن تحديثات... ⏳");
         if ('serviceWorker' in navigator) {
@@ -4677,7 +4685,7 @@ function printAndroidNative(htmlContent) {
                         alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
                     }, 3000);
                 } else {
-                    alert("⚠️ لم يتم العثور على مثبتت التطبيق.");
+                    alert("⚠️ لم يتم العثور على مثبت التطبيق.");
                 }
             } catch (error) {
                 console.error("خطأ:", error);
@@ -4687,6 +4695,7 @@ function printAndroidNative(htmlContent) {
             alert("متصفحك الحالي لا يدعم هذه الميزة.");
         }
     });
+
 </script>
 
 </body>
