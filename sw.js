@@ -1,41 +1,42 @@
-const cacheName = 'school-app-v4'; // غير هذا الرقم مع كل تحديث قادم
+// قم بتغيير هذا الرقم الآن لكي نجرب
+const cacheName = 'school-app-v305'; 
+
+// وضعنا هنا الملفات الموجودة فعلاً فقط لكي لا يفشل التحديث
 const assets = [
-  './',
-  './index.html',
-  './data.json',
-  './manifest.json',
-  './icon.png'
+  '/school-app/',
+  '/school-app/index.html'
 ];
 
-// 1. التثبيت (تحميل الملفات الجديدة)
+// 1. التثبيت
 self.addEventListener('install', e => {
-  // إجبار التحديث الجديد على تخطي طابور الانتظار
   self.skipWaiting(); 
   e.waitUntil(
     caches.open(cacheName).then(cache => {
+      // إذا فشل تحميل أي ملف هنا، سيفشل التحديث بالكامل!
       return cache.addAll(assets);
-    })
+    }).catch(err => console.error("فشل في تحميل الملفات للذاكرة", err))
   );
 });
 
-// 2. التفعيل (عامل النظافة: مسح أي إصدار قديم من الذاكرة)
+// 2. التفعيل (مسح الذاكرة القديمة والسيطرة فوراً)
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(keys
         .filter(key => key !== cacheName)
-        .map(key => caches.delete(key)) // حذف الذاكرة القديمة
+        .map(key => caches.delete(key)) 
       );
+    }).then(() => {
+      // هذا السطر السحري يجبر المحرك الجديد على العمل وتغيير الرقم فوراً
+      return self.clients.claim();
     })
   );
 });
 
-// 3. التشغيل (استراتيجية الذاكرة أولاً - Cache First)
+// 3. التشغيل (الأوفلاين)
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(response => {
-      // إذا وجد الملف في ذاكرة الهاتف، افتحه فوراً (أوفلاين)
-      // إذا لم يجده، حاول جلبه من الإنترنت
       return response || fetch(e.request);
     })
   );
