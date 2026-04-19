@@ -4621,15 +4621,15 @@ function printAndroidNative(htmlContent) {
 }
 </script>
 <script>
-    // الرابط المباشر والقاطع لملفك
     const swUrl = 'https://ibrahim09ali.github.io/school-app/sw.js';
 
-    // 0. مفتاح التشغيل 
+    // 0. مفتاح التشغيل ومراقب التحديثات التلقائية
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register(swUrl)
             .then(() => console.log("✅ المحرك يعمل"))
             .catch(err => console.error("❌ خطأ", err));
 
+        // هذا المراقب الذكي هو الذي ينعش الشاشة تلقائياً فقط إذا تم اكتشاف وتثبيت تحديث حقيقي
         let refreshing = false;
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (!refreshing) {
@@ -4658,28 +4658,30 @@ function printAndroidNative(htmlContent) {
     }
     displayCurrentVersion();
 
-    // 2. زر التحديث (المخفف والآمن)
+    // 2. زر التحديث (النسخة الذكية النهائية 🧠)
     document.getElementById('updateBtn').addEventListener('click', async function() {
         if (!navigator.onLine) {
             alert("📡 أنت حالياً 'أوفلاين' (غير متصل بالإنترنت).");
             return; 
         }
 
-        alert("جاري تنشيط التحديث... ⏳");
+        alert("جاري البحث عن تحديثات في السيرفر... ⏳");
 
         if ('serviceWorker' in navigator) {
             try {
-                // لقد قمنا بحذف أمر التحديث (update) الذي يسبب الانهيار!
-                // أمر التسجيل هذا فقط سيجبر المتصفح على جلب النسخة الجديدة بسلاسة
-                await navigator.serviceWorker.register(swUrl);
+                const reg = await navigator.serviceWorker.register(swUrl);
                 
+                // هنا نسأل المتصفح بذكاء: اذهب إلى GitHub وتأكد هل هناك تغيير؟
+                await reg.update();
+
+                // التريك البرمجي: إذا وجد المتصفح تحديثاً، سيقوم بعمل ريفريش تلقائي للشاشة ولن يصل لهذا السطر.
+                // أما إذا وصل لهذا السطر (بعد ثانية واحدة)، فهذا يعني أنه لم يجد شيئاً جديداً!
                 setTimeout(() => {
-                    alert("✅ تم تنشيط المحرك الجديد! سنقوم بإنعاش الشاشة الآن.");
-                    window.location.reload(); // إعادة تحميل الصفحة لإظهار التحديث
-                }, 2500);
+                    alert("🌟 تطبيقك محدث بالفعل على آخر إصدار!");
+                }, 1000);
                 
             } catch (error) {
-                alert("⚠️ الخطأ التقني من المتصفح هو: \n" + error.message);
+                alert("⚠️ حدث خطأ أثناء البحث عن تحديثات: \n" + error.message);
             }
         }
     });
