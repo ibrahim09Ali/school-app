@@ -4621,13 +4621,14 @@ function printAndroidNative(htmlContent) {
 }
 </script>
 <script>
-    const swUrl = '/school-app/sw.js';
+    // الرابط المباشر والقاطع لملفك
+    const swUrl = 'https://ibrahim09ali.github.io/school-app/sw.js';
 
     // 0. مفتاح التشغيل 
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register(swUrl)
-            .then(() => console.log("✅ المحرك يعمل بنجاح"))
-            .catch(err => console.error("❌ خطأ في تشغيل المحرك", err));
+            .then(() => console.log("✅ المحرك يعمل"))
+            .catch(err => console.error("❌ خطأ", err));
 
         let refreshing = false;
         navigator.serviceWorker.addEventListener('controllerchange', () => {
@@ -4651,44 +4652,35 @@ function printAndroidNative(htmlContent) {
                     document.getElementById('versionText').innerText = `الإصدار الحالي: غير مثبت`;
                 }
             } catch (error) {
-                console.error("خطأ في قراءة الإصدار", error);
+                console.error("خطأ", error);
             }
         }
     }
     displayCurrentVersion();
 
-    // 2. زر التحديث (الخيار النووي ☢️)
+    // 2. زر التحديث (المخفف والآمن)
     document.getElementById('updateBtn').addEventListener('click', async function() {
         if (!navigator.onLine) {
             alert("📡 أنت حالياً 'أوفلاين' (غير متصل بالإنترنت).");
             return; 
         }
 
-        alert("جاري تنظيف الذاكرة القديمة والاتصال بالسيرفر... ⏳");
+        alert("جاري تنشيط التحديث... ⏳");
 
         if ('serviceWorker' in navigator) {
             try {
-                // الخطوة الأولى: تدمير أي محرك قديم أو معطوب (الزومبي)
-                const registrations = await navigator.serviceWorker.getRegistrations();
-                for (let reg of registrations) {
-                    await reg.unregister(); // أمر التدمير
-                    console.log("🧹 تم تنظيف محرك قديم");
-                }
-
-                // الخطوة الثانية: بناء المحرك الجديد على نظافة تامة
-                const newRegistration = await navigator.serviceWorker.register(swUrl);
-                await newRegistration.update();
+                // لقد قمنا بحذف أمر التحديث (update) الذي يسبب الانهيار!
+                // أمر التسجيل هذا فقط سيجبر المتصفح على جلب النسخة الجديدة بسلاسة
+                await navigator.serviceWorker.register(swUrl);
                 
                 setTimeout(() => {
-                    alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
-                    window.location.reload(); // إجبار الصفحة على التحديث لرؤية النسخة الجديدة
-                }, 2000);
+                    alert("✅ تم تنشيط المحرك الجديد! سنقوم بإنعاش الشاشة الآن.");
+                    window.location.reload(); // إعادة تحميل الصفحة لإظهار التحديث
+                }, 2500);
                 
             } catch (error) {
                 alert("⚠️ الخطأ التقني من المتصفح هو: \n" + error.message);
             }
-        } else {
-            alert("متصفحك الحالي لا يدعم التحديثات.");
         }
     });
 </script>
