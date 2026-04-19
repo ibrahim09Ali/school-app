@@ -4621,11 +4621,13 @@ function printAndroidNative(htmlContent) {
 }
 </script>
 <script>
+    // الرابط الكامل المباشر لملفك (يمنع أي خطأ في المسار)
+    const swUrl = 'https://ibrahim09ali.github.io/school-app/sw.js';
+
     // 0. مفتاح التشغيل 
     if ('serviceWorker' in navigator) {
-        // تم إضافة المسار الكامل هنا
-        navigator.serviceWorker.register('/school-app/sw.js')
-            .then(() => console.log("✅ المحرك يعمل بنجاح (جاهز للأوفلاين)"))
+        navigator.serviceWorker.register(swUrl)
+            .then(() => console.log("✅ المحرك يعمل بنجاح"))
             .catch(err => console.error("❌ خطأ في تشغيل المحرك", err));
 
         let refreshing = false;
@@ -4663,12 +4665,12 @@ function printAndroidNative(htmlContent) {
             return; 
         }
 
-        alert("جاري الاتصال بالسيرفر للبحث عن تحديثات... ⏳");
+        // ⚠️ غيّرنا هذه الرسالة لتكون (كلمة السر) التي تثبت أن الكود الجديد يعمل
+        alert("جاري الاتصال المباشر بالسيرفر... ⏳");
 
         if ('serviceWorker' in navigator) {
             try {
-                // تم إضافة المسار الكامل هنا أيضاً
-                const registration = await navigator.serviceWorker.register('/school-app/sw.js/');
+                const registration = await navigator.serviceWorker.register(swUrl);
                 await registration.update();
                 
                 setTimeout(() => {
