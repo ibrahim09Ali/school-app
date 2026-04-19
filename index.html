@@ -4668,7 +4668,7 @@ function printAndroidNative(htmlContent) {
         if ('serviceWorker' in navigator) {
             try {
                 // تم إضافة المسار الكامل هنا أيضاً
-                const registration = await navigator.serviceWorker.register('/school-app/sw.js');
+                const registration = await navigator.serviceWorker.register('/school-app/sw.js/');
                 await registration.update();
                 
                 setTimeout(() => {
