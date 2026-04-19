@@ -4623,7 +4623,8 @@ function printAndroidNative(htmlContent) {
 <script>
     // 0. مفتاح التشغيل الوحيد (مدمج ونظيف)
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
+        // أضفنا النقطة والشرطة (./) لضمان المسار الصحيح دائماً
+        navigator.serviceWorker.register('./sw.js')
             .then(() => console.log("✅ المحرك يعمل بنجاح (جاهز للأوفلاين)"))
             .catch(err => console.error("❌ خطأ في تشغيل المحرك", err));
 
@@ -4656,40 +4657,36 @@ function printAndroidNative(htmlContent) {
     }
     displayCurrentVersion();
 
-    // 2. زر التحديث (المحمي ضد انقطاع الإنترنت)
+    // 2. زر التحديث (النسخة العسكرية القاطعة - تمنع تكرار رسالة إعادة البناء)
     document.getElementById('updateBtn').addEventListener('click', async function() {
-        // الحارس الذكي: التحقق من وجود إنترنت أولاً قبل أي شيء!
+        // الحارس الذكي: التحقق من وجود إنترنت
         if (!navigator.onLine) {
-            alert("📡 أنت حالياً 'أوفلاين' (غير متصل بالإنترنت).\nالتطبيق يعمل بكفاءة من الذاكرة الداخلية، لا يمكن البحث عن تحديثات الآن.");
-            return; // إيقاف الكود هنا فوراً لمنع الانهيار
+            alert("📡 أنت حالياً 'أوفلاين' (غير متصل بالإنترنت).\nالتطبيق يعمل بكفاءة من الذاكرة، لا يمكن البحث عن تحديثات الآن.");
+            return; 
         }
 
         alert("جاري الاتصال بالسيرفر للبحث عن تحديثات... ⏳");
 
-        if (!('serviceWorker' in navigator)) {
-            alert("متصفحك الحالي لا يدعم التحديثات.");
-            return;
-        }
-
-        try {
-            const registration = await navigator.serviceWorker.getRegistration();
-            if (registration) {
-                await registration.update(); // سؤال GitHub عن التحديث
+        if ('serviceWorker' in navigator) {
+            try {
+                // أمر واحد مباشر إجباري: قم بتسجيل المحرك وتحديثه فوراً!
+                // (لقد قمنا بحذف سؤال المتصفح تماماً لكي لا يعاندنا)
+                const registration = await navigator.serviceWorker.register('./sw.js');
+                await registration.update();
+                
                 setTimeout(() => {
                     alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
                 }, 3000);
-            } else {
-                // إذا تم مسح الكاش، نقوم بإعادة تسجيله بهدوء
-                await navigator.serviceWorker.register('sw.js');
-                alert("تم إعادة بناء المحرك بنجاح، حاول التحديث مرة أخرى.");
+                
+            } catch (error) {
+                console.error("خطأ:", error);
+                alert("❌ حدث خطأ تقني أثناء الاتصال بالسيرفر.");
             }
-        } catch (error) {
-            console.error("خطأ:", error);
-            alert("❌ حدث خطأ تقني أثناء الاتصال بالسيرفر.");
+        } else {
+            alert("متصفحك الحالي لا يدعم التحديثات.");
         }
     });
 </script>
-
 
 
 </body>
