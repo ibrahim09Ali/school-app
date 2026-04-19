@@ -3,23 +3,7 @@
 <head>
   <link rel="manifest" href="manifest.json">
 
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(() => console.log("التطبيق جاهز"))
-      .catch(err => console.log("خطأ", err));
 
-    // السحر هنا: هذا الكود يراقب الـ sw.js، 
-    // وإذا اكتشف نسخة جديدة (مثل v1.2) سيقوم بعمل تحديث للصفحة تلقائياً للمعلم
-    let refreshing = false;
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (!refreshing) {
-        window.location.reload();
-        refreshing = true;
-      }
-    });
-  }
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>سجل متابعة الطلاب</title>
@@ -4635,15 +4619,15 @@ function printAndroidNative(htmlContent) {
         iframe.contentWindow.print();
     }, 1000);
 }
-
-
-    // 0. مفتاح التشغيل
+</script>
+<script>
+    // 0. مفتاح التشغيل الوحيد (مدمج ونظيف)
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
-            .then(() => console.log("✅ المحرك يعمل بنجاح"))
-            .catch(err => console.error("❌ خطأ في تسجيل Service Worker", err));
+            .then(() => console.log("✅ المحرك يعمل بنجاح (جاهز للأوفلاين)"))
+            .catch(err => console.error("❌ خطأ في تشغيل المحرك", err));
 
-        // ريفريش تلقائي عند التحديث
+        // ريفريش تلقائي عند نجاح التحديث
         let refreshing = false;
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (!refreshing) {
@@ -4653,7 +4637,7 @@ function printAndroidNative(htmlContent) {
         });
     }
 
-    // 1. عرض رقم الإصدار
+    // 1. عرض رقم الإصدار الحالي من الذاكرة
     async function displayCurrentVersion() {
         if ('caches' in window) {
             try {
@@ -4666,39 +4650,47 @@ function printAndroidNative(htmlContent) {
                     document.getElementById('versionText').innerText = `الإصدار الحالي: غير مثبت`;
                 }
             } catch (error) {
-            // هذا السطر سيفضح المشكلة التقنية الحقيقية
-            alert("⚠️ الخطأ التقني هو: \n" + error.message);
-        }
+                console.error("خطأ في قراءة الإصدار", error);
+            }
         }
     }
     displayCurrentVersion();
 
-    // 2. زر التحديث (النسخة المُصلحة)
+    // 2. زر التحديث (المحمي ضد انقطاع الإنترنت)
     document.getElementById('updateBtn').addEventListener('click', async function() {
+        // الحارس الذكي: التحقق من وجود إنترنت أولاً قبل أي شيء!
+        if (!navigator.onLine) {
+            alert("📡 أنت حالياً 'أوفلاين' (غير متصل بالإنترنت).\nالتطبيق يعمل بكفاءة من الذاكرة الداخلية، لا يمكن البحث عن تحديثات الآن.");
+            return; // إيقاف الكود هنا فوراً لمنع الانهيار
+        }
+
         alert("جاري الاتصال بالسيرفر للبحث عن تحديثات... ⏳");
 
         if (!('serviceWorker' in navigator)) {
-            alert("متصفحك الحالي لا يدعم Service Workers.");
+            alert("متصفحك الحالي لا يدعم التحديثات.");
             return;
         }
 
         try {
-            const registration = await navigator.serviceWorker.register('sw.js');
+            const registration = await navigator.serviceWorker.getRegistration();
             if (registration) {
-                console.log("✅ Service Worker جاهز");
-                await registration.update();
+                await registration.update(); // سؤال GitHub عن التحديث
                 setTimeout(() => {
                     alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
                 }, 3000);
+            } else {
+                // إذا تم مسح الكاش، نقوم بإعادة تسجيله بهدوء
+                await navigator.serviceWorker.register('sw.js');
+                alert("تم إعادة بناء المحرك بنجاح، حاول التحديث مرة أخرى.");
             }
         } catch (error) {
             console.error("خطأ:", error);
-            alert("❌ حدث خطأ، تأكد من اتصالك بالإنترنت ووجود ملف sw.js.");
+            alert("❌ حدث خطأ تقني أثناء الاتصال بالسيرفر.");
         }
     });
-
-
 </script>
+
+
 
 </body>
 </html>
