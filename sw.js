@@ -30,10 +30,12 @@ self.addEventListener('activate', e => {
   );
 });
 
-// 3. التشغيل (جلب الملفات من الذاكرة أو الإنترنت)
+// 3. التشغيل (استراتيجية الذاكرة أولاً - Cache First)
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(response => {
+      // إذا وجد الملف في ذاكرة الهاتف، افتحه فوراً (أوفلاين)
+      // إذا لم يجده، حاول جلبه من الإنترنت
       return response || fetch(e.request);
     })
   );
