@@ -4621,8 +4621,7 @@ function printAndroidNative(htmlContent) {
 }
 </script>
 <script>
-    // الرابط الكامل المباشر لملفك (يمنع أي خطأ في المسار)
-    const swUrl = 'https://ibrahim09ali.github.io/school-app/sw.js';
+    const swUrl = '/school-app/sw.js';
 
     // 0. مفتاح التشغيل 
     if ('serviceWorker' in navigator) {
@@ -4658,24 +4657,32 @@ function printAndroidNative(htmlContent) {
     }
     displayCurrentVersion();
 
-    // 2. زر التحديث
+    // 2. زر التحديث (الخيار النووي ☢️)
     document.getElementById('updateBtn').addEventListener('click', async function() {
         if (!navigator.onLine) {
             alert("📡 أنت حالياً 'أوفلاين' (غير متصل بالإنترنت).");
             return; 
         }
 
-        // ⚠️ غيّرنا هذه الرسالة لتكون (كلمة السر) التي تثبت أن الكود الجديد يعمل
-        alert("جاري الاتصال المباشر بالسيرفر... ⏳");
+        alert("جاري تنظيف الذاكرة القديمة والاتصال بالسيرفر... ⏳");
 
         if ('serviceWorker' in navigator) {
             try {
-                const registration = await navigator.serviceWorker.register(swUrl);
-                await registration.update();
+                // الخطوة الأولى: تدمير أي محرك قديم أو معطوب (الزومبي)
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                for (let reg of registrations) {
+                    await reg.unregister(); // أمر التدمير
+                    console.log("🧹 تم تنظيف محرك قديم");
+                }
+
+                // الخطوة الثانية: بناء المحرك الجديد على نظافة تامة
+                const newRegistration = await navigator.serviceWorker.register(swUrl);
+                await newRegistration.update();
                 
                 setTimeout(() => {
                     alert("✅ تطبيقك محدث بالفعل على آخر إصدار!");
-                }, 3000);
+                    window.location.reload(); // إجبار الصفحة على التحديث لرؤية النسخة الجديدة
+                }, 2000);
                 
             } catch (error) {
                 alert("⚠️ الخطأ التقني من المتصفح هو: \n" + error.message);
