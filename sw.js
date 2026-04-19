@@ -1,5 +1,5 @@
 // قم بتغيير هذا الرقم الآن لكي نجرب
-const cacheName = 'school-app-v3'; 
+const cacheName = 'school-app-v4'; 
 
 // وضعنا هنا الملفات الموجودة فعلاً فقط لكي لا يفشل التحديث
 const assets = [
